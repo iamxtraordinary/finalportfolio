@@ -1,0 +1,95 @@
+/* ============================================
+   TOKENS — @font-face + CSS Custom Properties
+   ============================================ */
+
+/* ---- Font Faces ---- */
+
+/* Mighty Slab W01 — Display / slab-serif headers */
+@font-face {
+  font-family: "Mighty Slab W01";
+  src: url("../assets/fonts/mighty-slab-w01/37574f6caef0465da1195482ea3aaca0.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Druk Wide Web — Bold wide sans for titles */
+@font-face {
+  font-family: "Druk Wide Web";
+  src: url("../assets/fonts/druk-wide-web/Druk-Wide-Web-Bold-Regular.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Druk Text Wide Web — Medium sans for body text */
+@font-face {
+  font-family: "Druk Text Wide Web";
+  src: url("../assets/fonts/druk-wide-web/Druk-Text-Wide-Web-Medium-Regular.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* DM Sans — Variable font for meta/dates */
+@font-face {
+  font-family: "DM Sans";
+  src: url("../assets/fonts/DM_Sans/DMSans-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter — Variable font for UI elements */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---- Design Tokens ---- */
+
+:root {
+  /* Colors */
+  --color-periwinkle: #8388ff;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-charcoal: #1b1b1b;
+  --color-gray: #d9d9d9;
+  --color-overlay: rgba(0, 0, 0, 0.04);
+
+  /* Font Families */
+  --font-display: "Mighty Slab W01", serif;
+  --font-title: "Mighty Slab W01", serif;
+  --font-title-weight: 400;
+  --font-body: "Druk Text Wide Web", sans-serif;
+  --font-body-weight: 500;
+  --font-meta: "DM Sans", sans-serif;
+  --font-ui: "Inter", sans-serif;
+
+  /* Type Scale — fluid clamp values */
+  --text-hero: clamp(72px, 12vw, 160px);
+  --text-display: clamp(56px, 9vw, 120px);
+  --text-heading: clamp(40px, 6vw, 80px);
+  --text-title: clamp(24px, 3vw, 36px);
+  --text-body: clamp(14px, 1.4vw, 18px);
+  --text-meta: clamp(11px, 1vw, 13px);
+  --text-ui: clamp(12px, 1.1vw, 14px);
+
+  /* Spacing — fluid where needed for responsive */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: clamp(20px, 3vw, 32px);
+  --space-lg: clamp(32px, 5vw, 64px);
+  --space-xl: clamp(60px, 10vw, 120px);
+  --space-2xl: clamp(80px, 14vw, 180px);
+  --gutter: clamp(16px, 5vw, 80px);
+
+  /* Breakpoints (for reference — used in media queries) */
+  --bp-sm: 480px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1440px;
+}

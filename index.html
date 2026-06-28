@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emmanuel Okaka — Software Engineer & Mobile Developer</title>
+    <meta
+      name="description"
+      content="Emmanuel Okaka is a Software Engineer & Mobile Developer passionate about crafting meaningful and impactful software solutions."
+    />
+
+    <!-- Preload critical fonts -->
+    <link
+      rel="preload"
+      href="/src/assets/fonts/mighty-slab-w01/37574f6caef0465da1195482ea3aaca0.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/src/assets/fonts/druk-wide-web/Druk-Wide-Web-Bold-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+  </head>
+  <body>
+    <!-- Custom Cursor (outside Barba wrapper) -->
+    <div class="cursor" aria-hidden="true"></div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Loader (first visit only) -->
+    <div class="loader" aria-hidden="true">
+      <div class="loader__name">EMMANUEL</div>
+      <div class="loader__name">OKAKA</div>
+      <div class="loader__subtitle">Software Engineer & Mobile Developer</div>
+    </div>
+
+    <!-- Page Transition Panel -->
+    <div class="transition-panel" aria-hidden="true"></div>
+
+
+
+    <!-- Barba Wrapper -->
+    <div data-barba="wrapper">
+      <main data-barba="container" data-barba-namespace="home">
+
+        <!-- Section 1: Hero -->
+        <div class="hero-wrapper">
+          <section class="hero" id="hero">
+            <p class="hero__subtitle">Software Engineer & Mobile Developer</p>
+            <h1 class="hero__name">
+              <span class="hero__name-line">Emmanuel</span>
+              <span class="hero__name-line">Okaka</span>
+            </h1>
+          </section>
+        </div>
+
+      </main>
+    </div>
+
+    <!-- Entry script -->
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>
