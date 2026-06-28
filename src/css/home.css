@@ -33,11 +33,34 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   text-align: center;
-  text-decoration: underline;
-  text-underline-offset: 6px;
-  text-decoration-thickness: 1.5px;
   opacity: 0;
   will-change: transform;
+}
+
+/* Wrapper for the subtitle text + drawable underline */
+.hero__subtitle-inner {
+  position: relative;
+  display: inline-block;
+}
+
+/* Drawable underline — scales in from left to right via CSS custom property */
+.hero__subtitle-inner::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: #1a1a1a;
+  transform: scaleX(var(--ul-progress, 0));
+  transform-origin: left center;
+  will-change: transform;
+}
+
+/* Individual character spans for dissolve/reassemble animation */
+.hero__subtitle-char {
+  display: inline-block;
+  will-change: transform, opacity, filter;
 }
 
 .hero__name {
@@ -51,17 +74,20 @@
   color: #1a1a1a;
   line-height: 0.9;
   text-transform: uppercase;
+  cursor: default;
   will-change: transform;
 }
 
 .hero__name-line {
   display: block;
-  overflow: hidden;
+  overflow: visible; /* Allow letters to push outside their line box */
   text-align: center;
 }
 
 .hero__name-line span {
   display: inline-block;
+  will-change: transform;
+  transition: color 0.3s ease;
 }
 
 /* ---- Hero Responsive ---- */

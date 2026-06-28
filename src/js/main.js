@@ -130,21 +130,10 @@ function init() {
   initScrollProgress();
   new ClickSpark({ sparkSize: 12, sparkRadius: 20, sparkCount: 8, duration: 400 });
 
-  // Check if this is a first visit in this session
-  const hasVisited = sessionStorage.getItem("visited");
-
-  if (!hasVisited) {
-    // First visit — show loader, then reveal hero
-    initLoader(() => {
-      sessionStorage.setItem("visited", "true");
-      initHome();
-    });
-  } else {
-    // Return visit — hide loader, go straight to hero entrance
-    const loader = document.querySelector(".loader");
-    if (loader) loader.style.display = "none";
+  // Always run loader on page refresh/load as requested
+  initLoader(() => {
     initHome();
-  }
+  });
 }
 
 // Wait for DOM

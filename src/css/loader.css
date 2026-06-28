@@ -1,5 +1,5 @@
 /* ============================================
-   LOADER — First-visit loading screen
+   LOADER — Shuffle-reveal loading screen
    ============================================ */
 
 .loader {
@@ -37,6 +37,40 @@
 .loader__name span {
   display: inline-block;
 }
+
+/* ---- Shuffle Strip System ---- */
+
+/* Clipping wrapper — hides the strip overflow so only one cell is visible */
+.shuffle-clip {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  position: relative;
+}
+
+/* Sliding strip — contains all cells (scrambles + real char) */
+.shuffle-strip {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.shuffle-strip--vertical {
+  display: block;
+  white-space: normal;
+}
+
+/* Individual cell — one character slot within the strip */
+.shuffle-cell {
+  display: inline-block;
+  text-align: left;
+}
+
+.shuffle-cell--block {
+  display: block;
+}
+
+/* ---- Subtitle ---- */
 
 .loader__subtitle {
   font-family: var(--font-meta);
