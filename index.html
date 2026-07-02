@@ -26,43 +26,7 @@
     />
   </head>
   <body>
-    <!-- Custom Cursor (outside Barba wrapper) -->
-    <div class="cursor" aria-hidden="true"></div>
-
-    <!-- Scroll Progress Indicator -->
-    <div class="scroll-progress" aria-hidden="true"></div>
-
-    <!-- Loader (first visit only) -->
-    <div class="loader" aria-hidden="true">
-      <div class="loader__name">EMMANUEL</div>
-      <div class="loader__name">OKAKA</div>
-      <div class="loader__subtitle">Software Engineer & Mobile Developer</div>
-    </div>
-
-    <!-- Page Transition Panel -->
-    <div class="transition-panel" aria-hidden="true"></div>
-
-
-
-    <!-- Barba Wrapper -->
-    <div data-barba="wrapper">
-      <main data-barba="container" data-barba-namespace="home">
-
-        <!-- Section 1: Hero -->
-        <div class="hero-wrapper">
-          <section class="hero" id="hero">
-            <p class="hero__subtitle"><span class="hero__subtitle-inner">Software Engineer & Mobile Developer</span></p>
-            <h1 class="hero__name">
-              <span class="hero__name-line">Emmanuel</span>
-              <span class="hero__name-line">Okaka</span>
-            </h1>
-          </section>
-        </div>
-
-      </main>
-    </div>
-
-    <!-- Entry script -->
-    <script type="module" src="/src/js/main.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

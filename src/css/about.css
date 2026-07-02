@@ -1,5 +1,276 @@
 /* ============================================
-   ABOUT — Section styles for about.html
+   ABOUT / HELLO — Section styles for index.html & about.html
    ============================================ */
 
-/* Placeholder — will be populated when building the About page */
+/* ---- Section 2: HELLO (Home Page) ---- */
+
+.hello-section {
+  position: relative;
+  width: 100%;
+  background: var(--color-periwinkle);
+  padding: clamp(40px, 8vw, 80px) var(--gutter) clamp(60px, 12vw, 120px);
+  color: var(--color-black);
+  overflow: hidden;
+}
+
+.hello-section__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- Top / Main Layout Grid ---- */
+.hello-section__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+/* Left Group: HELLO! vertical text + Car Photo */
+.hello-section__left-group {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(12px, 2.5vw, 28px);
+  flex: 1;
+  max-width: 550px;
+}
+
+/* Vertical HELLO! Text (Mighty Slab W01) */
+.hello-section__hello-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.hello-section__hello-text {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  font-family: "Mighty Slab W01", serif;
+  font-size: clamp(55px, 8vw, 115px);
+  font-weight: 400;
+  color: var(--color-black);
+  line-height: 0.8;
+  margin: 0;
+  letter-spacing: -0.02em;
+  will-change: transform;
+}
+
+/* Photo Styling (Smaller, compact dimensions) */
+.hello-section__photo {
+  position: relative;
+  width: 100%;
+  max-width: 270px; /* Reduced from 380px */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+  will-change: transform;
+  flex-shrink: 0;
+}
+
+.hello-section__photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+  transform: scale(1);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hello-section__photo:hover img {
+  transform: scale(1.08);
+}
+
+.hello-section__photo--car {
+  transform: rotate(2deg);
+  margin-top: 15px;
+}
+
+/* Right Group: Bio Text + Selfie Photo */
+.hello-section__right-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: clamp(30px, 6vw, 80px);
+  flex: 1;
+  max-width: 550px;
+}
+
+.hello-section__bio {
+  align-self: flex-start;
+  margin-top: clamp(15px, 4vw, 50px);
+  max-width: 480px;
+}
+
+/* Normal text explicitly Druk Wide Web */
+.hello-section__bio-text {
+  font-family: "Druk Wide Web", sans-serif;
+  font-weight: 700;
+  font-size: clamp(14px, 1.5vw, 19px); /* Reduced from 32px */
+  line-height: 1.4;
+  color: var(--color-black);
+  letter-spacing: -0.01em;
+}
+
+.hello-section__photo--selfie {
+  align-self: flex-end;
+  transform: rotate(-1.5deg);
+}
+
+/* ---- Middle / Lower Layout: Hobbyist + Stats ---- */
+.hello-section__lower {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: clamp(30px, 5vw, 60px);
+  gap: var(--space-md);
+}
+
+/* Normal text explicitly Druk Wide Web */
+.hello-section__hobbyist {
+  font-family: "Druk Wide Web", sans-serif;
+  font-weight: 700;
+  font-size: clamp(12px, 1.2vw, 15px); /* Reduced from 24px */
+  line-height: 1.5;
+  color: var(--color-black);
+  max-width: 360px;
+  letter-spacing: -0.01em;
+}
+
+/* Stats Row */
+.hello-section__stats {
+  display: flex;
+  gap: clamp(20px, 4vw, 50px);
+  align-items: flex-start;
+  margin-right: clamp(15px, 8vw, 150px);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Stats numbers explicitly Druk Wide Web */
+.stat-item__num {
+  font-family: "Druk Wide Web", sans-serif;
+  font-size: clamp(32px, 4vw, 54px); /* Reduced from 84px */
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 0.9;
+}
+
+/* Stats labels explicitly Druk Wide Web */
+.stat-item__label {
+  font-family: "Druk Wide Web", sans-serif;
+  font-size: clamp(10px, 0.9vw, 12px); /* Reduced from 16px */
+  font-weight: 700;
+  color: var(--color-black);
+  line-height: 1.3;
+  margin-top: 10px;
+}
+
+/* ---- Bottom Row: CTA Button ---- */
+.hello-section__bottom {
+  margin-top: clamp(60px, 8vw, 100px);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.hello-section__cta .btn-pill {
+  background: var(--color-white);
+  color: var(--color-black);
+  font-family: "Druk Wide Web", sans-serif;
+  font-weight: 700;
+  font-size: clamp(12px, 1.1vw, 15px); /* Reduced from 20px */
+  padding: 14px 42px; /* Proportional compact padding */
+  border-radius: 999px;
+  border: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hello-section__cta .btn-pill:hover {
+  background: var(--color-black);
+  color: var(--color-white);
+  transform: scale(1.05);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
+}
+
+/* ---- Responsive / Mobile Breakpoints ---- */
+
+/* Tablet (1024px and below) */
+@media (max-width: 1024px) {
+  .hello-section__main {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  .hello-section__left-group {
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .hello-section__right-group {
+    max-width: 100%;
+    align-items: center;
+    gap: var(--space-lg);
+    text-align: center;
+  }
+
+  .hello-section__bio {
+    align-self: center;
+    margin-top: 0;
+  }
+
+  .hello-section__photo--selfie {
+    align-self: center;
+  }
+
+  .hello-section__lower {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-lg);
+  }
+
+  .hello-section__stats {
+    margin-right: 0;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .stat-item {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Mobile Small (768px and below) */
+@media (max-width: 768px) {
+  .hello-section__left-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hello-section__hello-text {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: clamp(45px, 12vw, 70px);
+  }
+
+  .hello-section__photo {
+    max-width: 240px;
+  }
+
+  .hello-section__stats {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+}

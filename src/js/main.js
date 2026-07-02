@@ -23,7 +23,7 @@ import barbaPrefetch from "@barba/prefetch";
 import { initLoader } from "./loader.js";
 import { initHome } from "./home.js";
 import { ClickSpark } from "./clickSpark.js";
-// import { initAbout } from "./about.js";
+import { initAbout } from "./about.js";
 // import { initTransitions } from "./transitions.js";
 
 // ---- Register GSAP Plugins ---- //
@@ -133,6 +133,7 @@ function init() {
   // Always run loader on page refresh/load as requested
   initLoader(() => {
     initHome();
+    initAbout();
   });
 }
 
