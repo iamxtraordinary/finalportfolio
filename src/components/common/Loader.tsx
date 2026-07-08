@@ -31,15 +31,19 @@ export default function Loader({ onComplete, mainRef }: LoaderProps) {
     gsap.killTweensOf('.scroll-arrow');
 
     const tl = gsap.timeline({ onComplete });
-    const duration = 1.6; 
+    const duration = 2; 
     const ease = 'power3.inOut';
 
-    // fade out hero text + hint quickly 
+    // slide out hero text + fade out hint
     tl.to(scrollHintRef.current, { opacity: 0, duration: 0.3 }, 0);
-    tl.to('.eo-letter, .dev-word, .emmanuel-letter, .okaka-letter', {
-      opacity: 0, duration: 0.3, ease: 'power2.in',
+    
+    // Slide text out to the left instead of fading
+    tl.to('.dev-word, .emmanuel-letter, .okaka-letter', {
+      x: -window.innerWidth,
+      duration: duration,
+      ease: ease,
+      stagger: 0.01
     }, 0);
-    tl.to(devRef.current, { opacity: 0, duration: 0.3 }, 0);
 
     // squish loader width from 85vw to 60px
     tl.to(curtainRef.current, {
@@ -111,13 +115,13 @@ export default function Loader({ onComplete, mainRef }: LoaderProps) {
 
     // E:O enters, holds, exits upward
     tl.to('.eo-letter', { y: '0%', duration: 0.8, stagger: 0.15, ease: 'power4.out' })
-      .to('.eo-letter', { y: '-100vh', duration: 0.8, stagger: 0.1, ease: 'power4.in' }, '+=0.5');
+      .to('.eo-letter', { y: '-100vh', duration: 0.7, stagger: 0.1, ease: 'power4.in' }, '+=0.1');
 
     // Software Engineer enters
-    tl.to('.dev-word', { y: '0%', duration: 0.8, stagger: 0.08, ease: 'power4.out' });
+    tl.to('.dev-word', { y: '0%', duration: 0.7, stagger: 0.08, ease: 'power4.out' });
 
     // Assembly: EMMANUEL + OKAKA enter, dev text docks below
-    tl.addLabel('assembly', '+=0.6');
+    tl.addLabel('assembly', '+=0.3');
     tl.to('.emmanuel-letter', { y: '0%', duration: 1.0, stagger: 0.06, ease: 'power4.out' }, 'assembly');
     tl.to('.okaka-letter', { y: '0%', duration: 1.0, stagger: 0.06, ease: 'power4.out' }, 'assembly+=0.4');
 
@@ -127,11 +131,11 @@ export default function Loader({ onComplete, mainRef }: LoaderProps) {
 
     // 2. The Peek: After the assembly holds for a moment, slide the curtain to 85vw
     // to reveal the peeking "HELLO!" section.
-    tl.addLabel('peek', '+=0.8');
-    tl.to(curtainRef.current, { width: '85vw', duration: 1.2, ease: 'power3.inOut' }, 'peek');
+    tl.addLabel('peek', '+=0');
+    tl.to(curtainRef.current, { width: '85vw', duration: 0.5, ease: 'power3.inOut' }, 'peek');
     
     if (mainRef.current) {
-      tl.to(mainRef.current, { x: 'calc(85vw - 60px)', duration: 1.2, ease: 'power3.inOut' }, 'peek');
+      tl.to(mainRef.current, { x: 'calc(85vw - 60px)', duration: 2, ease: 'power3.inOut' }, 'peek');
     }
 
     // Bring up the scroll hint at the same time
